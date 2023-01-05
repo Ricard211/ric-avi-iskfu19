@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\ric-avi-iskfu19.props" />
+</Project>

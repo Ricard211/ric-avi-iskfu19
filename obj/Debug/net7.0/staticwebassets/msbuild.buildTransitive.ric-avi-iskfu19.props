@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\ric-avi-iskfu19.props" />
+</Project>
