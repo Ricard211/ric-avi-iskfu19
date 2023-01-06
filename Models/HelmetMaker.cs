@@ -1,9 +1,9 @@
 namespace ric_avi_iskfu19.Models;
 
 public class HelmetMaker{
-    public int MakeId { get; set; }
+    public Guid MakeId { get; set; }
 
-    public string? MakerName { get; set; } = default!;
+    public string MakerName { get; set; } = default!;
 
     public int MakerSafetyRank { get; set; }
 

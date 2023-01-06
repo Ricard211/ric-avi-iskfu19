@@ -12,13 +12,13 @@ public class HelmetService{
         _dbContext = dbContext;
     }
 
-    public async Task<List<Helmet>> GetHelmet()
+    public async Task <List<Helmet>> GetHelmet()
     {
         var helmets = await _dbContext.Helmets.ToListAsync();
         return helmets;
     }
 
-    public async Task<Helmet> Create(HelmetMaker helmetMaker)
+    public async Task <Helmet> Create(HelmetMaker helmetMaker)
     {
         var helmets = new Helmet(helmetMaker);
         await _dbContext.Helmets.AddAsync(helmets);
@@ -26,12 +26,12 @@ public class HelmetService{
         return helmets;
     }
 
-    public async Task<Helmet> GetHelmetId(int id){
+    public async Task <Helmet> GetHelmetId(int id){
         var helmets = await _dbContext.Helmets.Where(x => x.HelmetId == id).FirstOrDefaultAsync();
         return helmets;
     }
 
-    public async Task<Helmet> ChangeHelmets(int id, Helmet helmet){
+    public async Task <Helmet> ChangeHelmets(int id, Helmet helmet){
         var helmets = await _dbContext.Helmets.Where(x => x.HelmetId == id).FirstOrDefaultAsync();
        if(helmets != null){
          
@@ -44,4 +44,12 @@ public class HelmetService{
        return helmets;
     }
 
+    public async Task <Helmet> DeleteHelmet(int id){
+       var helmets = await _dbContext.Helmets.Where(x => x.HelmetId == id).FirstOrDefaultAsync();
+       
+       _dbContext.Helmets.Remove(helmets);
+        await _dbContext.SaveChangesAsync();
+        await _dbContext.Helmets.ToListAsync();
+        return helmets;
+    }
 }

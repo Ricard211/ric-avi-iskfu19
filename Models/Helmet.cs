@@ -1,5 +1,6 @@
 namespace ric_avi_iskfu19.Models;
 
+
 public class Helmet{
 
     public Helmet(HelmetMaker helmetMaker){
@@ -14,8 +15,8 @@ public class Helmet{
     }
 
 public int HelmetId {get; set; }
-public string? HelmetMaker {get; set; } = default!;
-public string? HelmetName {get; set; } = default!;
+public string HelmetMaker {get; set; } = default!;
+public string HelmetName {get; set; } = default!;
 public DateTime HelmetProductionYear {get; set; }
 public int HelmetPrice {get; set; }
 

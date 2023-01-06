@@ -26,9 +26,10 @@ public class HelmetController : ControllerBase
     }
 
     [HttpGet("{id}")]
-    public async Task<ActionResult<object>> GetHelmetId(Guid id)
+    public async Task<ActionResult<object>> GetHelmetId(int id)
     {
-        return Ok();
+        var helmet = await _helmetService.GetHelmetId(id); 
+        return Ok(helmet);
     }
 
     [HttpPost]
@@ -46,11 +47,12 @@ public class HelmetController : ControllerBase
     }
 
     [HttpDelete("{id}")]
-    public async Task<ActionResult<object>> DeleteHelmet(Guid id)
+    public async Task<ActionResult<object>> DeleteHelmet(int id)
     {
-        return StatusCode(400);
+        
+        var helmet = await _helmetService.DeleteHelmet(id); 
+        return Ok(helmet);
     }
-
 
     private ObjectResult Created(object value)
     {
