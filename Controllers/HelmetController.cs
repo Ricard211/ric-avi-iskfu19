@@ -19,10 +19,10 @@ public class HelmetController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<ActionResult<List<Helmet>>> GetHelmets()
+    public async Task<ActionResult<List<Helmet>>> GetHelmet()
     {
-        var helmets = await _helmetService.GetHelmet();
-        return Ok(helmets);
+        var helmet = await _helmetService.GetHelmet();
+        return Ok(helmet);
     }
 
     [HttpGet("{id}")]

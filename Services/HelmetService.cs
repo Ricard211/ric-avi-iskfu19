@@ -12,8 +12,8 @@ public class HelmetService{
     }
 
     public async Task <List<Helmet>> GetHelmet(){
-        var helmets = await _dbContext.Helmets.ToListAsync();
-        return helmets;
+        var helmet = await _dbContext.Helmets.ToListAsync();
+        return helmet;
     }
 
     public async Task <HelmetMaker> Create(HelmetMaker helmetMaker){
@@ -24,27 +24,27 @@ public class HelmetService{
     }
 
     public async Task <Helmet> GetHelmetId(int id){
-        var helmets = await _dbContext.Helmets.Where(x => x.HelmetId == id).FirstOrDefaultAsync();
+        var helmets = await _dbContext.Helmets.Where(x => x.helmetid == id).FirstOrDefaultAsync();
 
         return helmets;
+
     }
 
     public async Task <Helmet> ChangeHelmets(int id, Helmet helmet){
-        var helmets = await _dbContext.Helmets.Where(x => x.HelmetId == id).FirstOrDefaultAsync();
-          
-         helmets.HelmetMaker = helmet.HelmetMaker;
-         helmets.HelmetName = helmet.HelmetName;
-         helmets.HelmetProductionYear = helmet.HelmetProductionYear;
-         helmets.HelmetPrice = helmet.HelmetPrice;
+        var helmets = await _dbContext.Helmets.Where(x => x.helmetid == id).FirstOrDefaultAsync();
+
+         helmets.helmettmaker = helmet.helmettmaker;
+         helmets.helmetname = helmet.helmetname;
+         helmets.helmetproductionyear = helmet.helmetproductionyear;
+         helmets.helmetprice = helmet.helmetprice;
 
         Task<int> task = _dbContext.SaveChangesAsync();
          
-
        return helmets;
     }
 
     public async Task <Helmet> DeleteHelmet(int id){
-       var helmets = await _dbContext.Helmets.Where(x => x.HelmetId == id).FirstOrDefaultAsync();
+       var helmets = await _dbContext.Helmets.Where(x => x.helmetid == id).FirstOrDefaultAsync();
        
        _dbContext.Helmets.Remove(helmets);
         await _dbContext.SaveChangesAsync();

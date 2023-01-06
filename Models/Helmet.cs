@@ -1,24 +1,21 @@
+using System.ComponentModel.DataAnnotations;
 namespace ric_avi_iskfu19.Models;
 
-
 public class Helmet{
-
-    public Helmet(HelmetMaker helmetMaker){
-        
-        //will
-        /*Id = Guid.NewGuid();
-        Maker = helmetMake.Maker;
-        Name = helmetMake.Name;
-        ProductionYear = helmetMake.ProductionYear;
-        Price = helmetMake.Price;*/
+    public Helmet(){
 
     }
 
-public int HelmetId {get; set;}
+    public Helmet(HelmetMaker helmetMaker)
+    {
 
-public string HelmetMaker {get; set;} = default!;
-public string HelmetName {get; set;} = default!;
-public DateTime HelmetProductionYear {get; set;}
-public int HelmetPrice {get; set;}
+    }
+[Key]
+public int helmetid {get; set;}
+
+public string helmettmaker {get; set;} = default!;
+public string helmetname {get; set;} = default!;
+public DateTime helmetproductionyear {get; set;}
+public int helmetprice {get; set;}
 
 }

@@ -14,7 +14,7 @@ public class HelmetContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Helmet>()
-            .HasKey(b => b.HelmetId);
+            .HasKey(b => b.helmetid);
 
         modelBuilder.Entity<Helmet>().ToTable("helmets", schema: "public");
 

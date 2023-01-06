@@ -1,12 +1,12 @@
 CREATE TABLE Helmet(
-HelmetId serial,
-HelmetMaker varchar(300),
-HelmetName varchar(300),
-HelmetProductionYear date,
-HelmetPrice int
+helmetid serial,
+helmettmaker varchar(300),
+helmetname varchar(300),
+helmetproductionyear date,
+helmetprice int
 );
 
-insert into Helmet(HelmetMaker, HelmetName, HelmetProductionYear, HelmetPrice) values 
+insert into (Helmethelmettmaker, helmetname, helmetproductionyear, helmetprice) values 
 ('AGV', 'K-5', '2013-01-01', '230'),
 ('SHARK', 'Spartan', '2014-01-01', '320'),
 ('AGV', 'K-3', '2010-01-01', '190'),
@@ -15,13 +15,13 @@ insert into Helmet(HelmetMaker, HelmetName, HelmetProductionYear, HelmetPrice) v
 select * from Helmet;
 
 CREATE TABLE HelmetMaker(
-MakeId serial,
-MakerName varchar(300),
-MakerSafetyRank int,
-MakerOpenYear date,
+makeid serial,
+makername varchar(300),
+makersafetyrank int,
+makeropenyear date
 );
 
-insert into HelmetMaker(MakerName, MakerSafetyRank, MakerOpenYear) values 
+insert into HelmetMaker(makername, makersafetyrank , makeropenyear) values 
 ('AGV', '1', '1947-01-01'),
 ('SHARK', '3', '1986-01-01'),
 ('HJC', '7', '1971-01-01'),
