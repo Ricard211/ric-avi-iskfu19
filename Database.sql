@@ -1,4 +1,4 @@
-CREATE TABLE Helmet(
+CREATE TABLE Helmets(
 helmetid serial,
 helmettmaker varchar(300),
 helmetname varchar(300),
@@ -6,7 +6,7 @@ helmetproductionyear date,
 helmetprice int
 );
 
-insert into (Helmethelmettmaker, helmetname, helmetproductionyear, helmetprice) values 
+insert into Helmets(helmettmaker, helmetname, helmetproductionyear, helmetprice) values 
 ('AGV', 'K-5', '2013-01-01', '230'),
 ('SHARK', 'Spartan', '2014-01-01', '320'),
 ('AGV', 'K-3', '2010-01-01', '190'),
