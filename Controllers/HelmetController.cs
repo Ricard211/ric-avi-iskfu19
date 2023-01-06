@@ -28,15 +28,15 @@ public class HelmetController : ControllerBase
     [HttpGet("{id}")]
     public async Task<ActionResult<object>> GetHelmetId(int id)
     {
-        var helmet = await _helmetService.GetHelmetId(id); 
-        return Ok(helmet);
+        var helmets = await _helmetService.GetHelmetId(id); 
+        return Ok(helmets);
     }
 
     [HttpPost]
     public async Task<ActionResult<object>> CreateHelmet(HelmetMaker helmetMaker)
     {
-        var helmet = await _helmetService.Create(helmetMaker);
-        return Created(helmet);
+        var helmets = await _helmetService.Create(helmetMaker);
+        return Created(helmets);
     }
 
     [HttpPut("{id}")]
